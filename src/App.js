@@ -75,12 +75,14 @@ class App extends Component {
                                 src={PruittHead}
                                 style={{
                                     alignSelf: 'center', // lest flexbox stretches img
-                                    maxWidth: '20%'
+                                    width: '20%',
+                                    maxWidth: 150
                                 }}
                             />
                             <img
                                 src={DailyShowLogo}
                                 style={{
+                                    maxHeight: 165,
                                     alignSelf: 'center',
                                     maxWidth: '60%'
                                 }}
