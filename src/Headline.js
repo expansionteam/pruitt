@@ -38,7 +38,7 @@ class Headline extends React.PureComponent {
                         style={{ fontFamily: 'georgia', fontStyle: 'italic' }}
                     >
                         Scott Pruitt {words[0]} to Get Him {words[1]} So He
-                        Could {words[2]}.
+                        Could {words[2]}
                     </Subhead>
                     <FooterContainer
                         my={3}
