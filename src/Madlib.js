@@ -13,6 +13,9 @@ class Madlib extends React.PureComponent {
         this.reshuffleWords = this.reshuffleWords.bind(this);
         this.grabRandomWords = this.grabRandomWords.bind(this);
     }
+    static defaultProps = {
+        style: {}
+    };
     /* from each wordlist, grab a random word. Exclude words
 * already in use--i.e. words present in the current madlib sentence */
     grabRandomWords(currentWords = []) {
@@ -36,11 +39,9 @@ class Madlib extends React.PureComponent {
         return (
             <Flex
                 mt={4}
-                alignContent={'center'}
                 direction={'column'}
-                style={{ maxWidth: 600 }}
+                style={{ maxWidth: 600, ...this.props.style }}
                 mx={'auto'}
-                flexWrap={false}
             >
                 <Headline words={this.state.words} />
                 <Button

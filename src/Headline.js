@@ -3,6 +3,7 @@ import { Box, Text, Flex, Subhead } from 'rebass';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import NewspaperImage from './assets/newspaper.png';
+import SmallDailyShowLogo from './assets/small-logo.png';
 
 const IS_TESTING = false;
 const LONGEST_POSSIBLE = [
@@ -11,7 +12,7 @@ const LONGEST_POSSIBLE = [
     'Have Conversations Without People Hearing'
 ];
 
-const Newspaper = styled(Text)`
+const Newspaper = styled.div`
     padding: 3rem;
     background: url(${NewspaperImage}) no-repeat;
     background-size: 100% 100%;
@@ -34,7 +35,7 @@ class Headline extends React.PureComponent {
                         justify={'space-between'}
                         f={2}
                     >
-                        <div>LOGO</div>
+                        <img src={SmallDailyShowLogo} width={75} />
                         <div>almostrealpruittheadlines.com</div>{' '}
                     </Flex>
                 </Newspaper>

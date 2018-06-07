@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'CarnivalMF';
+    src: url('hinted-CarnivalMFOpenShadow.eot');
+    src: url('hinted-CarnivalMFOpenShadow.eot?#iefix') format('embedded-opentype'),
+        url('hinted-CarnivalMFOpenShadow.woff2') format('woff2'),
+        url('hinted-CarnivalMFOpenShadow.woff') format('woff'),
+        url('hinted-CarnivalMFOpenShadow.ttf') format('truetype'),
+        url('hinted-CarnivalMFOpenShadow.svg#CarnivalMFOpenShadow') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
