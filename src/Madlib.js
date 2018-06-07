@@ -1,6 +1,7 @@
 import React from 'react';
 import { Textarea, Flex, Button, Subhead } from 'rebass';
 import words from './words.json';
+import ShareButtons from './ShareButtons';
 import { sample, values, flatten } from 'lodash';
 import Headline from './Headline';
 
@@ -57,6 +58,7 @@ class Madlib extends React.PureComponent {
                 >
                     Generate
                 </Button>
+                <ShareButtons />
             </Flex>
         );
     }
