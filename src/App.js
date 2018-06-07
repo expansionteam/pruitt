@@ -51,6 +51,7 @@ class App extends Component {
                     <Flex
                         pt={'1rem'}
                         direction={'column'}
+                        align={'center'}
                         w={'100%'}
                         justify={'flex-start'}
                         style={{
@@ -64,19 +65,24 @@ class App extends Component {
                         <Flex
                             justify={'center'}
                             wrap={false}
+                            ml={'-7%'}
+                            w={['75%', '75%', '100%', '100%']}
                             style={{
                                 flexWrap: 'nowrap',
-                                width: '100%',
-                                marginLeft: '-5%',
+
                                 marginRight: '1rem'
                             }}
                         >
                             <img
                                 src={PruittHead}
+                                alt={
+                                    "A picture of Scott Pruitt's head, smiling."
+                                }
                                 style={{
                                     alignSelf: 'center', // lest flexbox stretches img
                                     width: '20%',
-                                    maxWidth: 150
+                                    marginRight: '0.5rem',
+                                    maxWidth: 140
                                 }}
                             />
                             <img

@@ -38,7 +38,7 @@ class Madlib extends React.PureComponent {
     render() {
         return (
             <Flex
-                mt={4}
+                mt={[1, 1, 4, 4]}
                 direction={'column'}
                 style={{ maxWidth: 600, ...this.props.style }}
                 mx={'auto'}
