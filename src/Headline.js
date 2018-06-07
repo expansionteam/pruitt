@@ -22,9 +22,9 @@ const Word = styled.span`
 `;
 
 const FooterContainer = styled(Flex)`
-    @media (max-width: 800px) {
+    @media (max-width: 600px) {
         img {
-            display: none;
+            order: 1 !important;
         }
     }
 `;
@@ -56,7 +56,9 @@ class Headline extends React.PureComponent {
                     >
                         <img
                             style={{
-                                margin: '0.5rem'
+                                margin: '0.5rem',
+                                alignSelf: 'center',
+                                order: 0
                             }}
                             src={SmallDailyShowLogo}
                             width={75}

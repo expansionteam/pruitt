@@ -91,7 +91,7 @@ class App extends Component {
                         <img
                             style={{
                                 marginTop: '1rem',
-                                width: '90%',
+                                width: '80%',
                                 maxWidth: '600px',
                                 alignSelf: 'center'
                             }}
