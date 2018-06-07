@@ -94,9 +94,9 @@ class App extends Component {
                                 }}
                             />
                         </Flex>
-                        <img
+                        <Image
+                            mt={[1, 1, 3, 3]}
                             style={{
-                                marginTop: '1rem',
                                 width: '80%',
                                 maxWidth: '600px',
                                 alignSelf: 'center'

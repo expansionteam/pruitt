@@ -12,8 +12,7 @@ const LONGEST_POSSIBLE = [
     'Have Conversations Without People Hearing'
 ];
 
-const Newspaper = styled.div`
-    padding: 3rem;
+const Newspaper = styled(Box)`
     background: url(${NewspaperImage}) no-repeat;
     background-size: 100% 100%;
 `;
@@ -33,7 +32,7 @@ class Headline extends React.PureComponent {
         const words = IS_TESTING === true ? LONGEST_POSSIBLE : this.props.words;
         return (
             <Box>
-                <Newspaper>
+                <Newspaper p={['2rem', '2rem', '3rem', '3rem']}>
                     <Subhead
                         f={[3, 3, 4, 4]}
                         style={{ fontFamily: 'georgia', fontStyle: 'italic' }}
