@@ -34,7 +34,10 @@ class Headline extends React.PureComponent {
         return (
             <Box>
                 <Newspaper>
-                    <Subhead f={[3, 3, 4, 4]} style={{ fontStyle: 'italic' }}>
+                    <Subhead
+                        f={[3, 3, 4, 4]}
+                        style={{ fontFamily: 'georgia', fontStyle: 'italic' }}
+                    >
                         Scott Pruitt {words[0]} to Get Him {words[1]} So He
                         Could {words[2]}.
                     </Subhead>
