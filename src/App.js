@@ -95,7 +95,7 @@ class App extends Component {
                             />
                         </Flex>
                         <Image
-                            mt={[1, 1, 3, 3]}
+                            mt={[1, 1, '2rem', '2rem']}
                             style={{
                                 width: '80%',
                                 maxWidth: '600px',

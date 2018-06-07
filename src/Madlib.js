@@ -1,7 +1,7 @@
 import React from 'react';
 import { Textarea, Flex, Button, Subhead } from 'rebass';
 import words from './words.json';
-import { sample, lowerCase, startCase, values, flatten } from 'lodash';
+import { sample, values, flatten } from 'lodash';
 import Headline from './Headline';
 
 class Madlib extends React.PureComponent {
@@ -27,9 +27,7 @@ class Madlib extends React.PureComponent {
             return sample(wordList);
         });
         // convert to title case
-        return flatten(newWords)
-            .map(lowerCase)
-            .map(startCase);
+        return flatten(newWords);
     }
 
     reshuffleWords() {
