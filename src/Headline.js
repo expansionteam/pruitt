@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import NewspaperImage from './assets/newspaper.png';
 import SmallDailyShowLogo from './assets/small-logo.png';
 
-const IS_TESTING = false;
+const IS_TESTING = true;
 const LONGEST_POSSIBLE = [
     'Urged a Sign Language-Speaking Chimpanzee',
     'Seats at a University of Kentucky Basketball Game',
@@ -20,24 +20,53 @@ const Newspaper = styled.div`
 const Word = styled.span`
     font-weight: bold;
 `;
+
+const FooterContainer = styled(Flex)`
+    @media (max-width: 800px) {
+        img {
+            display: none;
+        }
+    }
+`;
 class Headline extends React.PureComponent {
     render() {
         const words = IS_TESTING === true ? LONGEST_POSSIBLE : this.props.words;
         return (
             <Box>
-                <Newspaper fontSize={4}>
-                    Scott Pruitt <Word>{words[0]}</Word> to Get Him{' '}
-                    <Word>{words[1]}</Word> So He Could <Word>{words[2]}</Word>.
-                    <Flex
+                <Newspaper>
+                    <Subhead f={[3, 3, 4, 4]} style={{ fontStyle: 'italic' }}>
+                        Scott Pruitt {words[0]} to Get Him {words[1]} So He
+                        Could {words[2]}.
+                    </Subhead>
+                    <FooterContainer
                         my={3}
                         mt={'1rem'}
                         width={'100%'}
-                        justify={'space-between'}
+                        style={{ flexWrap: 'wrap' }}
+                        justify={[
+                            'center',
+                            'space-between',
+                            'space-between',
+                            'space-between'
+                        ]}
                         f={2}
                     >
-                        <img src={SmallDailyShowLogo} width={75} />
-                        <div>almostrealpruittheadlines.com</div>{' '}
-                    </Flex>
+                        <img
+                            style={{
+                                margin: '0.5rem'
+                            }}
+                            src={SmallDailyShowLogo}
+                            width={75}
+                        />
+                        <div
+                            style={{
+                                margin: '0.5rem',
+                                fontStyle: 'italic'
+                            }}
+                        >
+                            almostrealpruittheadlines.com
+                        </div>{' '}
+                    </FooterContainer>
                 </Newspaper>
             </Box>
         );

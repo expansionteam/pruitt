@@ -1,24 +1,39 @@
 import React, { Component } from 'react';
 import './App.css';
 import Madlib from './Madlib';
-import { Provider, Subhead, Heading } from 'rebass';
+import { Provider, Subhead, Flex, Heading, Image } from 'rebass';
 import CurvedHeader from './CurvedHeader';
 import DailyShowLogo from './assets/dailyshow-logo.png';
 import styled from 'styled-components';
 import PruittHead from './assets/pruitt-head.png';
 import SideBackground from './assets/side-border.png';
+import TitleImage from './assets/title.png';
 
-const Logo = styled.img`
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-`;
+const BorderImage = props => {
+    const Img = styled.img`
+        @media (max-width: 800px) {
+            display: none;
+        }
+        @media (min-width: 801px) and (max-width: 1300px) {
+            display: ${props.left ? 'initial' : 'none'};
+        }
+    `;
+    return (
+        <Img
+            src={SideBackground}
+            style={{ transform: props.left ? 'rotateY(180deg)' : undefined }}
+        />
+    );
+};
 
-const BorderImage = props => (
-    <img
-        src={SideBackground}
-        style={{ transform: props.left ? 'rotateY(180deg)' : undefined }}
-    />
-);
+const BottomImg = () => {
+    const Img = styled.img`
+        @media (max-width: 800px) {
+            display: block;
+        }
+    `;
+    return <Img src={SideBackground} style={{ transform: 'rotateY(90deg)' }} />;
+};
 
 class App extends Component {
     render() {
@@ -33,30 +48,56 @@ class App extends Component {
                     }}
                 >
                     <BorderImage left />
-                    <div style={{ flex: 1 }}>
+                    <Flex
+                        pt={'1rem'}
+                        direction={'column'}
+                        w={'100%'}
+                        justify={'flex-start'}
+                        style={{
+                            flex: 1,
+
+                            paddingLeft: '1rem',
+                            paddingRight: '1rem'
+                        }}
+                    >
                         {/* offset by width of Pruitt head to center on DS logo*/}
-                        <div style={{ marginLeft: '-100px' }}>
-                            <img src={PruittHead} height={100} />
-                            <Logo src={DailyShowLogo} width={225} />
-                        </div>
-                        <Heading
+                        <Flex
+                            justify={'center'}
+                            wrap={false}
                             style={{
-                                fontFamily: 'CarnivalMF',
-                                color: '#1F3C81'
+                                flexWrap: 'nowrap',
+                                width: '100%',
+                                marginLeft: '-5%',
+                                marginRight: '1rem'
                             }}
                         >
-                            Scott Pruitt
-                        </Heading>
-                        <Subhead
+                            <img
+                                src={PruittHead}
+                                style={{
+                                    alignSelf: 'center', // lest flexbox stretches img
+                                    maxWidth: '20%'
+                                }}
+                            />
+                            <img
+                                src={DailyShowLogo}
+                                style={{
+                                    alignSelf: 'center',
+                                    maxWidth: '60%'
+                                }}
+                            />
+                        </Flex>
+                        <img
                             style={{
-                                fontFamily: 'CarnivalMF',
-                                color: '#3262CF'
+                                marginTop: '1rem',
+                                width: '90%',
+                                maxWidth: '600px',
+                                alignSelf: 'center'
                             }}
-                        >
-                            Corruption Generator
-                        </Subhead>
+                            alt={'The Scott Pruitt Corruption Generator title'}
+                            src={TitleImage}
+                        />
                         <Madlib />
-                    </div>
+                    </Flex>
                     <BorderImage />
                 </div>
             </Provider>
