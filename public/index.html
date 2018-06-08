@@ -2,15 +2,6 @@
 <html lang="en">
 
 <head>
-  <script>
-    var headlineIndices = window.location.pathname.replace('/', '')
-    var caption = headlineIndices.length === 0 ? 'default no path' : headlineIndices.split(',')
-    console.log("HEADLINE INDICES", headlineIndices, caption);
-    var tag = document.createElement('meta')
-    tag.name = "og:image"
-    tag.content = "http://res.cloudinary.com/almostrealpruittheadlines/image/upload/l_text:Georgia_35_italic:" + encodeURIComponent(caption) + "/clip.png"
-    document.getElementsByTagName('head')[0].appendChild(tag);
-  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">

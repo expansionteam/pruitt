@@ -1,25 +1,33 @@
 {
-  "name": "pruitt-generator",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "lodash": "^4.17.10",
-    "prop-types": "^15.6.1",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
-    "rebass": "^1.0.7",
-    "styled-components": "^3.3.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "react-snap": "^1.13.0"
-  }
+    "name": "pruitt-generator",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "lodash": "^4.17.10",
+        "prop-types": "^15.6.1",
+        "react": "^16.4.0",
+        "react-dom": "^16.4.0",
+        "react-helmet": "^5.2.0",
+        "react-router": "^4.3.1",
+        "react-router-dom": "^4.3.1",
+        "react-scripts": "1.1.4",
+        "rebass": "^1.0.7",
+        "styled-components": "^3.3.2"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "postbuild": "react-snap",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
+    },
+    "devDependencies": {
+        "react-snap": "^1.13.0"
+    },
+    "reactSnap": {
+        "puppeteerArgs": [
+            "--no-sandbox",
+            "--disable-setuid-sandbox"
+        ]
+    }
 }
