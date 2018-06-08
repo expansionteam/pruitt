@@ -6,6 +6,7 @@ import { sample, values, flatten } from 'lodash';
 import Headline from './Headline';
 
 const IS_TESTING = false;
+
 const LONGEST_POSSIBLE = [
     'Urged a Sign Language-Speaking Chimpanzee',
     'Seats at a University of Kentucky Basketball Game',
