@@ -5,13 +5,8 @@ import styled from 'styled-components';
 import NewspaperImage from './assets/newspaper.png';
 import SmallDailyShowLogo from './assets/small-logo.png';
 
-/* const IS_TESTING = false;
-const LONGEST_POSSIBLE = [
-    'Urged a Sign Language-Speaking Chimpanzee',
-    'Seats at a University of Kentucky Basketball Game',
-    'Have Conversations Without People Hearing'
-];
- */
+
+
 const Newspaper = styled(Box)`
     background: url(${NewspaperImage}) no-repeat;
     background-size: 100% 100%;

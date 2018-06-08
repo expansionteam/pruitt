@@ -5,6 +5,13 @@ import ShareButtons from './ShareButtons';
 import { sample, values, flatten } from 'lodash';
 import Headline from './Headline';
 
+const IS_TESTING = false;
+const LONGEST_POSSIBLE = [
+    'Urged a Sign Language-Speaking Chimpanzee',
+    'Seats at a University of Kentucky Basketball Game',
+    'Have Conversations Without People Hearing'
+];
+
 class Madlib extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -34,7 +41,10 @@ class Madlib extends React.PureComponent {
         this.setState({ words: this.grabRandomWords(this.state.words) });
     }
     render() {
-        const { words } = this.state;
+        const words =
+            IS_TESTING === true && process.env.NODE_ENV === 'development'
+                ? LONGEST_POSSIBLE
+                : this.state.words;
         const headlineCopy = `Scott Pruitt ${words[0]} To Get Him ${
             words[1]
         } So He Could ${words[2]}`;
@@ -62,7 +72,7 @@ class Madlib extends React.PureComponent {
                     Generate
                 </Button>
                 <ShareButtons
-                    shareText={`I created an almost real Scott Pruitt headline using @thedailyshow's #PruittCorruptionGenerator:\n\n"${headlineCopy}"\n\Generate yours: `}
+                    shareText={`.@thedailyshow's #PruittCorruptionGenerator:\n\n"${headlineCopy}"\n\nGenerate yours: almostrealpruittheadlines.com`}
                 />
             </Flex>
         );
