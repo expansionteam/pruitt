@@ -5,13 +5,13 @@ import styled from 'styled-components';
 import NewspaperImage from './assets/newspaper.png';
 import SmallDailyShowLogo from './assets/small-logo.png';
 
-const IS_TESTING = false;
+/* const IS_TESTING = false;
 const LONGEST_POSSIBLE = [
     'Urged a Sign Language-Speaking Chimpanzee',
     'Seats at a University of Kentucky Basketball Game',
     'Have Conversations Without People Hearing'
 ];
-
+ */
 const Newspaper = styled(Box)`
     background: url(${NewspaperImage}) no-repeat;
     background-size: 100% 100%;
@@ -29,7 +29,6 @@ const FooterContainer = styled(Flex)`
 `;
 class Headline extends React.PureComponent {
     render() {
-        const words = IS_TESTING === true ? LONGEST_POSSIBLE : this.props.words;
         return (
             <Box>
                 <Newspaper p={['2rem', '2rem', '3rem', '3rem']}>
@@ -37,8 +36,7 @@ class Headline extends React.PureComponent {
                         f={[3, 3, 4, 4]}
                         style={{ fontFamily: 'georgia', fontStyle: 'italic' }}
                     >
-                        Scott Pruitt {words[0]} To Get Him {words[1]} So He
-                        Could {words[2]}
+                        {this.props.children}
                     </Subhead>
                     <FooterContainer
                         my={3}

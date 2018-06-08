@@ -27,7 +27,6 @@ class Madlib extends React.PureComponent {
             );
             return sample(wordList);
         });
-        // convert to title case
         return flatten(newWords);
     }
 
@@ -35,6 +34,10 @@ class Madlib extends React.PureComponent {
         this.setState({ words: this.grabRandomWords(this.state.words) });
     }
     render() {
+        const { words } = this.state;
+        const headlineCopy = `Scott Pruitt ${words[0]} To Get Him ${
+            words[1]
+        } So He Could ${words[2]}`;
         return (
             <Flex
                 mt={[1, 1, 4, 4]}
@@ -42,7 +45,7 @@ class Madlib extends React.PureComponent {
                 style={{ maxWidth: 600, ...this.props.style }}
                 mx={'auto'}
             >
-                <Headline words={this.state.words} />
+                <Headline>{headlineCopy}</Headline>
                 <Button
                     style={{
                         fontWeight: 400,
@@ -58,7 +61,9 @@ class Madlib extends React.PureComponent {
                 >
                     Generate
                 </Button>
-                <ShareButtons />
+                <ShareButtons
+                    shareText={`I created an almost real Scott Pruitt headline using @thedailyshow's #PruittCorruptionGenerator:\n\n"${headlineCopy}"\n\nCreate yours at `}
+                />
             </Flex>
         );
     }

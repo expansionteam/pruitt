@@ -196,9 +196,9 @@ class ShareButtons extends React.PureComponent {
 
                 <a
                     class="resp-sharing-button__link"
-                    href={
-                        "https://twitter.com/intent/tweet/?text=I%20created%20an%20almost%20real%20Scott%20Pruitt%20headline%20using%20%40thedailyshow's%20%23PruittCorruptionGenerator!&url=http%3A%2F%2Fwww.almostrealpruittheadlines.com%2F"
-                    }
+                    href={`https://twitter.com/intent/tweet/?text=${encodeURIComponent(
+                        this.props.shareText
+                    )}&amp;url=http%3A%2F%2Fwww.almostrealpruittheadlines.com%2F`}
                     target="_blank"
                     aria-label="Twitter"
                 >
