@@ -6,9 +6,16 @@ import CurvedHeader from './CurvedHeader';
 import DailyShowLogo from './assets/dailyshow-logo.png';
 import styled from 'styled-components';
 import PruittHead from './assets/pruitt-head.png';
-import { Helmet } from 'react-helmet';
 import SideBackground from './assets/side-border.png';
 import TitleImage from './assets/pruitt-title.svg';
+
+/* 
+first = Array(24).fill().map((e, i) => i)
+second = Array(29).fill().map((e, i) => i)
+third = Array(32).fill().map((e, i) => i)
+
+links = first.map(f => second.map(s => third.map(t => [f,s,t].join(',')))).reduce((prev, curr) => ([...prev, ...curr]), []).reduce((prev, curr) => ([...prev, ...curr]), [])
+*/
 
 const BorderImage = props => {
     const Img = styled.img`
@@ -37,28 +44,9 @@ const BottomImg = () => {
 };
 
 class App extends Component {
-    componentDidMount() {
-        var headlineIndices = window.location.pathname.replace('/', '');
-        var caption =
-            headlineIndices.length === 0
-                ? 'default no path'
-                : headlineIndices.split(',');
-        this.setState({
-            metaImageUrl:
-                'http://res.cloudinary.com/almostrealpruittheadlines/image/upload/l_text:Georgia_35_italic:' +
-                encodeURIComponent(caption) +
-                '/clip.png'
-        });
-    }
     render() {
         return (
             <Provider>
-                <Helmet>
-                    <meta
-                        name={'og:image'}
-                        content={this.state && this.state.metaImageUrl}
-                    />
-                </Helmet>
                 <div
                     className="App"
                     style={{
@@ -67,9 +55,6 @@ class App extends Component {
                         flexFlow: 'row nowrap'
                     }}
                 >
-                    <a style={{ display: 'none' }} href={'/2,3,3'}>
-                        Link
-                    </a>
                     <BorderImage left />
                     <Flex
                         pt={'1rem'}

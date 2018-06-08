@@ -198,7 +198,10 @@ class ShareButtons extends React.PureComponent {
                     className="resp-sharing-button__link"
                     href={`https://twitter.com/intent/tweet/?text=${encodeURIComponent(
                         this.props.shareText
-                    )}&amp;url=http%3A%2F%2Fwww.almostrealpruittheadlines.com%2F`}
+                    )}&amp;url=${encodeURIComponent(
+                        'http://www.almostrealpruittheadlines.com' +
+                            this.props.sharePath
+                    )}`}
                     target="_blank"
                     aria-label="Twitter"
                 >
