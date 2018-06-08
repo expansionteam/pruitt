@@ -35,7 +35,7 @@ class Madlib extends React.PureComponent {
     }
     render() {
         const { words } = this.state;
-        const headlineCopy = `Scott Pruitt ${words[0]} To Get Him ${
+        const headlineCopy = `Scott Pruitt ${words[0]} to Get Him ${
             words[1]
         } So He Could ${words[2]}`;
         return (
