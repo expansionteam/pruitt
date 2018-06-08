@@ -62,7 +62,7 @@ class Madlib extends React.PureComponent {
                     Generate
                 </Button>
                 <ShareButtons
-                    shareText={`I created an almost real Scott Pruitt headline using @thedailyshow's #PruittCorruptionGenerator:\n\n"${headlineCopy}"\n\nCreate yours at www.almostrealpruittheadlines.com`}
+                    shareText={`I created an almost real Scott Pruitt headline using @thedailyshow's #PruittCorruptionGenerator:\n\n"${headlineCopy}"\n\nCreate yours at `}
                 />
             </Flex>
         );
