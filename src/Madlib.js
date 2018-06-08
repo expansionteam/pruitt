@@ -4,6 +4,7 @@ import words from './words.json';
 import ShareButtons from './ShareButtons';
 import { sample, values, flatten } from 'lodash';
 import Headline from './Headline';
+import generateHeadline from './generate-headline'
 
 const IS_TESTING = false;
 
@@ -16,11 +17,17 @@ const LONGEST_POSSIBLE = [
 class Madlib extends React.PureComponent {
     constructor(props) {
         super(props);
+        const initialWordIndices =
+            (props.match &&
+                props.match.params &&
+                props.match.params.wordIndices && props.match.params.wordIndices.split(',')) ||
+            undefined;
         this.state = {
-            words: this.grabRandomWords()
+            words: generateHeadline(initialWordIndices)
         };
         this.reshuffleWords = this.reshuffleWords.bind(this);
         this.grabRandomWords = this.grabRandomWords.bind(this);
+        this.grabSpecificWords = this.grabSpecificWords.bind(this);
     }
     static defaultProps = {
         style: {}
@@ -37,7 +44,16 @@ class Madlib extends React.PureComponent {
         });
         return flatten(newWords);
     }
-
+    grabSpecificWords(indices) {
+        const newWords = values(words).map(
+            (wordList, i) => wordList[indices[i]]
+        );
+        console.log('NEW WORDS', indices, newWords);
+        // if any of our initial indices are out of bounds, replace w/ random
+        return newWords.filter(w => typeof w !== 'string').length > 0
+            ? this.grabRandomWords()
+            : flatten(newWords);
+    }
     reshuffleWords() {
         this.setState({ words: this.grabRandomWords(this.state.words) });
     }
@@ -67,7 +83,7 @@ class Madlib extends React.PureComponent {
                     f={4}
                     mx={'auto'}
                     my={4}
-                    onClick={this.reshuffleWords}
+                    onClick={console.log}
                     width={200}
                 >
                     Generate

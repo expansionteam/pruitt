@@ -170,15 +170,15 @@ class ShareButtons extends React.PureComponent {
         return (
             <Wrapper>
                 <a
-                    class="resp-sharing-button__link"
+                    className="resp-sharing-button__link"
                     href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.almostrealpruittheadlines.com%2F"
                     target="_blank"
                     aria-label="Facebook"
                 >
-                    <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium">
+                    <div className="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium">
                         <div
                             aria-hidden="true"
-                            class="resp-sharing-button__icon resp-sharing-button__icon--solid"
+                            className="resp-sharing-button__icon resp-sharing-button__icon--solid"
                         >
                             <svg
                                 xmlns={'http://www.w3.org/2000/svg'}
@@ -195,17 +195,17 @@ class ShareButtons extends React.PureComponent {
                 </a>
 
                 <a
-                    class="resp-sharing-button__link"
+                    className="resp-sharing-button__link"
                     href={`https://twitter.com/intent/tweet/?text=${encodeURIComponent(
                         this.props.shareText
                     )}&amp;url=http%3A%2F%2Fwww.almostrealpruittheadlines.com%2F`}
                     target="_blank"
                     aria-label="Twitter"
                 >
-                    <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--medium">
+                    <div className="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--medium">
                         <div
                             aria-hidden={'true'}
-                            class="resp-sharing-button__icon resp-sharing-button__icon--solid"
+                            className="resp-sharing-button__icon resp-sharing-button__icon--solid"
                         >
                             <svg
                                 xmlns={'http://www.w3.org/2000/svg'}
