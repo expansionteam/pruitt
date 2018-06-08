@@ -7,8 +7,7 @@ import DailyShowLogo from './assets/dailyshow-logo.png';
 import styled from 'styled-components';
 import PruittHead from './assets/pruitt-head.png';
 import SideBackground from './assets/side-border.png';
-import TitleImage from './assets/title.png';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import TitleImage from './assets/pruitt-title.svg';
 
 const BorderImage = props => {
     const Img = styled.img`
@@ -39,82 +38,77 @@ const BottomImg = () => {
 class App extends Component {
     render() {
         return (
-            <Router>
-                <Provider>
-                    <div
-                        className="App"
+            <Provider>
+                <div
+                    className="App"
+                    style={{
+                        maxWidth: '100vw',
+                        display: 'flex',
+                        flexFlow: 'row nowrap'
+                    }}
+                >
+                    <BorderImage left />
+                    <Flex
+                        pt={'1rem'}
+                        direction={'column'}
+                        align={'center'}
+                        w={'100%'}
+                        justify={'flex-start'}
                         style={{
-                            maxWidth: '100vw',
-                            display: 'flex',
-                            flexFlow: 'row nowrap'
+                            flex: 1,
+
+                            paddingLeft: '1rem',
+                            paddingRight: '1rem'
                         }}
                     >
-                        <BorderImage left />
+                        {/* offset by width of Pruitt head to center on DS logo*/}
                         <Flex
-                            pt={'1rem'}
-                            direction={'column'}
-                            align={'center'}
-                            w={'100%'}
-                            justify={'flex-start'}
+                            justify={'center'}
+                            wrap={false}
+                            ml={'-7%'}
+                            w={['75%', '75%', '100%', '100%']}
                             style={{
-                                flex: 1,
+                                flexWrap: 'nowrap',
 
-                                paddingLeft: '1rem',
-                                paddingRight: '1rem'
+                                marginRight: '1rem'
                             }}
                         >
-                            {/* offset by width of Pruitt head to center on DS logo*/}
-                            <Flex
-                                justify={'center'}
-                                wrap={false}
-                                ml={'-7%'}
-                                w={['75%', '75%', '100%', '100%']}
-                                style={{
-                                    flexWrap: 'nowrap',
-
-                                    marginRight: '1rem'
-                                }}
-                            >
-                                <img
-                                    src={PruittHead}
-                                    alt={
-                                        "A picture of Scott Pruitt's head, smiling."
-                                    }
-                                    style={{
-                                        alignSelf: 'center', // lest flexbox stretches img
-                                        width: '20%',
-                                        marginRight: '0.5rem',
-                                        maxWidth: 140
-                                    }}
-                                />
-                                <img
-                                    src={DailyShowLogo}
-                                    style={{
-                                        maxHeight: 165,
-                                        alignSelf: 'center',
-                                        maxWidth: '60%'
-                                    }}
-                                />
-                            </Flex>
-                            <Image
-                                mt={[1, 1, '2rem', '2rem']}
-                                style={{
-                                    width: '80%',
-                                    maxWidth: '600px',
-                                    alignSelf: 'center'
-                                }}
+                            <img
+                                src={PruittHead}
                                 alt={
-                                    'The Scott Pruitt Corruption Generator title'
+                                    "A picture of Scott Pruitt's head, smiling."
                                 }
-                                src={TitleImage}
+                                style={{
+                                    alignSelf: 'center', // lest flexbox stretches img
+                                    width: '20%',
+                                    marginRight: '0.5rem',
+                                    maxWidth: 140
+                                }}
                             />
-                            <Route path={'/:wordIndices'} component={Madlib} />
-                            <Route exact path={'/'} component={Madlib} />
+                            <img
+                                src={DailyShowLogo}
+                                style={{
+                                    maxHeight: 165,
+                                    alignSelf: 'center',
+                                    maxWidth: '60%'
+                                }}
+                            />
                         </Flex>
-                        <BorderImage />
-                    </div>
-                </Provider>
-            </Router>
+                        <Image
+                            mt={[1, 1, '2rem', '2rem']}
+                            style={{
+                                width: '80%',
+                                maxWidth: '600px',
+                                alignSelf: 'center'
+                            }}
+                            alt={'The Scott Pruitt Corruption Generator title'}
+                            src={TitleImage}
+                        />
+                        <Madlib />
+                    </Flex>
+                    <BorderImage />
+                </div>
+            </Provider>
         );
     }
 }
