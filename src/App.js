@@ -7,7 +7,7 @@ import DailyShowLogo from './assets/dailyshow-logo.png';
 import styled from 'styled-components';
 import PruittHead from './assets/pruitt-head.png';
 import SideBackground from './assets/side-border.png';
-import TitleImage from './assets/title.png';
+import TitleImage from './assets/pruitt-title.svg';
 
 const BorderImage = props => {
     const Img = styled.img`
